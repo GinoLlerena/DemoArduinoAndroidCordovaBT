@@ -1,0 +1,24 @@
+﻿
+<ion-view view-title="Arduino & Apache Cordova + Ionic">
+    <ion-content>
+        <div class="list">
+            <div class="item item-divider">
+                Settings
+            </div>
+
+            <ion-toggle ng-model="btBluehTooh" toggle-class="toggle-calm" ng-checked="false" ng-disabled="true">Bluetooth</ion-toggle>
+            <div class="padding" ng-show="btBluehTooh">
+                <button class="button button-block button-positive" ng-click="listar()">
+                    Listar Dispositivos
+                </button>
+            </div>
+            <ion-list ng-show="btBluehTooh">
+                <ion-item collection-repeat="item in listBT "
+                          collection-item-width="'100%'" 
+                          ui-sref="tabs.connect({id:item.id})">
+                    {{item.name}}
+                </ion-item>
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-view>
